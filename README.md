@@ -1,71 +1,171 @@
-A secure full-stack Task Management application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) with JWT-based authentication and role-based access control.
+# 🚀 Task Management System (MERN Stack)
 
-🚀 Features
-🔐 Authentication & Authorization
+A secure full-stack Task Management application built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**.  
+This project demonstrates authentication, authorization, protected routes, and CRUD operations with a scalable backend architecture.
 
-User Registration & Login
+---
 
-Password hashing using bcrypt
+## 📌 Overview
 
-JWT-based authentication
+This application allows users to:
 
-Role-based access control (User/Admin)
+- Register and log in securely
+- Access a protected dashboard
+- Create, update, delete, and manage tasks
+- Toggle task completion
+- Log out securely
 
-Protected API routes
+The backend follows a modular architecture with middleware-based authentication and versioned APIs.
 
-📋 Task Management
+---
 
-Create tasks
+## 🛠 Tech Stack
 
-Read all tasks (user-specific)
+### 🔹 Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JSON Web Token (JWT)
+- bcryptjs
+- dotenv
+- CORS
 
-Update tasks
+### 🔹 Frontend
+- React.js
+- Axios
+- CSS
 
-Delete tasks
+---
 
-Toggle task completion status
+## 🔐 Features
 
-🛡 Security
+### Authentication & Authorization
+- User registration
+- User login
+- Password hashing using bcrypt
+- JWT-based authentication
+- Protected API routes
+- Role-based access (User/Admin)
 
-Input validation
+### Task Management
+- Create task
+- Read all tasks
+- Update task
+- Delete task
+- Toggle completion status
 
-Password hashing
+### Security
+- Input validation
+- Hashed passwords
+- JWT verification middleware
+- Error handling
+- API versioning (`/api/v1/`)
 
-JWT authentication middleware
+---
 
-Protected routes
+## 📂 Project Structure
 
-Secure error handling
+test_project/
+│
+├── server/
+│ ├── config/
+│ ├── controllers/
+│ ├── middlewares/
+│ ├── models/
+│ ├── routes/
+│ ├── utils/
+│ ├── app.js
+│ └── server.js
+│
+└── client/
+├── components/
+├── services/
+└── App.js
 
-🌐 Frontend
 
-Register & Login UI
+---
 
-Protected Dashboard
+## ⚙️ Installation & Setup
 
-Task CRUD operations
+### 1️⃣ Clone the Repository
 
-Loading states & success/error messages
+```bash
+git clone https://github.com/chitranshkumarsinha/test_project.git
+cd test_project
+🖥 Backend Setup
+cd server
+npm install
+Create a .env file inside the server/ directory:
 
-🏗 Tech Stack
-Backend
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRE=expire_time
 
-Node.js
+Start backend:
+npm run dev
+Backend runs on:
+http://localhost:5000
 
-Express.js
+🌐 Frontend Setup
+cd client
+npm install
+npm start
+Frontend runs on:
+http://localhost:5173
 
-MongoDB
+🔑 API Endpoints
+🔐 Auth Routes
+Method	Endpoint	Description
+POST	/api/v1/auth/register	Register a new user
+POST	/api/v1/auth/login	Login user
+📋 Task Routes (Protected)
+Method	Endpoint	Description
+GET	/api/v1/tasks	Get all tasks
+POST	/api/v1/tasks	Create a task
+PUT	/api/v1/tasks/:id	Update a task
+DELETE	/api/v1/tasks/:id	Delete a task
+🔐 Authentication Flow
+User registers or logs in.
 
-Mongoose
+Server generates JWT token.
 
-JWT (jsonwebtoken)
+Token is stored in frontend (localStorage).
 
-bcryptjs
+Token is sent in request headers:
 
-Frontend
+Authorization: Bearer <token>
+Backend verifies token using middleware.
 
-React.js
+If valid → access granted.
 
-Axios
+🧠 Architecture Highlights
+Modular folder structure
 
-CSS
+Middleware-based authentication
+
+Clean separation of concerns
+
+Versioned API structure
+
+Scalable backend design
+
+📈 Future Improvements
+Refresh token implementation
+
+Swagger API documentation
+
+Token rotation
+
+Pagination and filtering
+
+Deployment (Render / Railway / Vercel)
+
+CI/CD integration
+
+👨‍💻 Author
+Chitransh Kumar Sinha
+
+📜 License
+This project is built for educational and internship demonstration purposes.
